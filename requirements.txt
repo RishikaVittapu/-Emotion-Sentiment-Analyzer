@@ -1,8 +1,8 @@
 deepface==0.0.93
+tensorflow==2.11.0
+keras==2.11.0
 opencv-python-headless==4.7.0.72
 textblob
-tensorflow
-keras
 numpy
 pandas
 pillow
