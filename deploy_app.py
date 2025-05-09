@@ -6,6 +6,7 @@ import numpy as np
 import cv2
 import base64
 import os
+import time
 
 # ---------- Background Image Setup ----------
 def set_background(image_file):
@@ -23,6 +24,7 @@ def set_background(image_file):
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
 # Set the background image (make sure file exists)
+time.sleep(1)  # Helps avoid render JS load race
 set_background("back.png")
 
 # ---------- Text Sentiment Analysis ----------
