@@ -1,10 +1,9 @@
-opencv-python
+streamlit
 deepface
+textblob
 tensorflow
 keras
 numpy
-textblob
-gradio
-opencv-python
 pandas
-
+pillow
+opencv-python-headless
