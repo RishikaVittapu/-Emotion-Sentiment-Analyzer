@@ -1,0 +1,10 @@
+opencv-python
+deepface
+tensorflow
+keras
+numpy
+textblob
+gradio
+opencv-python
+pandas
+
