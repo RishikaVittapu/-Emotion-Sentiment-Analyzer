@@ -1,9 +1,9 @@
-streamlit
-deepface
+deepface==0.0.93
+opencv-python-headless==4.7.0.72
 textblob
 tensorflow
 keras
 numpy
 pandas
 pillow
-opencv-python-headless
+streamlit
