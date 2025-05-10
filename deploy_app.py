@@ -26,7 +26,7 @@ def set_background(image_file):
 
 # Add slight delay to avoid JS fetch race condition
 time.sleep(1)
-set_background("back.png")
+set_background("back.png")  # Ensure back.png is in the correct location
 
 # ---------- Text Sentiment Analysis ----------
 def analyze_text_sentiment(text):
@@ -45,12 +45,14 @@ def analyze_face_emotion(uploaded_image):
         if uploaded_image is None:
             return "No image provided."
 
+        # Convert uploaded image to a PIL image and save it temporarily
         image = Image.open(uploaded_image).convert("RGB")
-        image_np = np.array(image)
-        image_bgr = cv2.cvtColor(image_np, cv2.COLOR_RGB2BGR)
+        image_path = "temp_image.jpg"  # Temporary image path
+        image.save(image_path)
 
+        # Analyze the image using DeepFace
         analysis = DeepFace.analyze(
-            img_path=image_bgr,
+            img_path=image_path,  # Use the saved image path
             actions=['emotion'],
             enforce_detection=False,
             detector_backend='opencv'
