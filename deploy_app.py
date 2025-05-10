@@ -28,13 +28,6 @@ def set_background(image_file):
 time.sleep(1)
 set_background("back.png")
 
-# ---------- Load Emotion Model Once ----------
-@st.cache_resource
-def load_emotion_model():
-    return DeepFace.build_model("emotion")
-
-emotion_model = load_emotion_model()
-
 # ---------- Text Sentiment Analysis ----------
 def analyze_text_sentiment(text):
     blob = TextBlob(text)
@@ -60,8 +53,7 @@ def analyze_face_emotion(uploaded_image):
             img_path=image_bgr,
             actions=['emotion'],
             enforce_detection=False,
-            detector_backend='opencv',  # faster than mtcnn
-            models={'emotion': emotion_model}
+            detector_backend='opencv'
         )
 
         emotions = analysis[0]['emotion']
