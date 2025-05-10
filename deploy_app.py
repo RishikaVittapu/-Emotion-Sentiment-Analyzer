@@ -31,7 +31,7 @@ set_background("back.png")
 # ---------- Load Emotion Model Once ----------
 @st.cache_resource
 def load_emotion_model():
-    return DeepFace.build_model("Emotion")
+    return DeepFace.build_model("emotion")
 
 emotion_model = load_emotion_model()
 
